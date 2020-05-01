@@ -389,6 +389,7 @@ export class DiagnosticManager implements Disposable {
     } else {
       diagnostics = diagnostics.filter(o => positionInRange(pos, o.range) == 0)
     }
+    diagnostics = diagnostics.reverse()
     diagnostics.sort((a, b) => a.severity - b.severity)
     return diagnostics
   }
